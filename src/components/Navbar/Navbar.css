@@ -1,0 +1,53 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background-color: #eeeeee;;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 60px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+  
+  .navbar__logo {
+    font-family: "Playwrite DE SAS", cursive;
+    font-size: 2rem;
+    color: black;
+    letter-spacing: 1px;
+  }
+  
+  .navbar__links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+  }
+  
+  .nav__link {
+    display: inline-block;
+    background-color: #222;
+    color: white;
+    text-decoration: none;
+    padding: 8px 25px;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+  }
+  
+  .nav__link.active {
+    color: #f3a54c;
+  }
+  
+  .nav__link:hover {
+    background-color: #333;
+  }
+  

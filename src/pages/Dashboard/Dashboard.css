@@ -1,0 +1,46 @@
+.dashboard {
+    min-height: calc(100vh - 18.5px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #1f2424;
+    text-align: center;
+    overflow: hidden;
+  }
+  
+  
+  .dashboard__logo {
+    width: 300px; /* adjust based on your logo resolution */
+    height: auto;
+    margin-bottom: 30px;
+    user-select: none;
+  }
+  
+  .dashboard__text {
+    animation: fadeIn 1.2s ease-in-out 0.4s both;
+    font-size: 2rem;
+    color: #848484;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 500;
+    opacity: 0.8;
+  }
+  
+  /* Add a subtle fade-in for elegance */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .dashboard__logo,
+  .dashboard__text {
+    animation: fadeIn 0.8s ease-in-out both;
+  }
+  

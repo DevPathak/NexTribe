@@ -1,0 +1,133 @@
+.contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    /* background: linear-gradient(180deg, #1a1a1a 0%, #111 100%); */
+    color: #fff;
+    /* min-height: calc(100vh - 80px); */
+    background-color: #1f2424;
+    min-height: 10vh;
+    padding: 60px 40px;
+    margin-top: 100px;
+    font-family: "Inter", Arial, sans-serif;
+    justify-content: center;
+    gap: 40px;
+  }
+  
+  .contact-left {
+    flex: 1 1 400px;
+    max-width: 500px;
+  }
+  
+  .contact-left h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+  }
+  
+  .contact-left hr {
+    width: 60px;
+    border: 2px solid #fff;
+    margin-bottom: 20px;
+  }
+  
+  .contact-left h3 {
+    margin: 10px 0;
+    font-weight: 700;
+  }
+  
+  .contact-left p {
+    margin-bottom: 16px;
+    line-height: 1.6;
+    color: #ddd;
+  }
+  
+  .contact-email {
+    font-weight: 600;
+    color: #fff;
+  }
+  
+  .socials {
+    margin-top: 20px;
+  }
+  
+  .socials span {
+    display: block;
+    margin-bottom: 10px;
+    text-transform: lowercase;
+  }
+  
+  .icons i {
+    font-size: 1.4rem;
+    margin-right: 14px;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+  
+  .icons i:hover {
+    color: #1e90ff;
+  }
+  
+  /* Right side form */
+  .contact-right {
+    flex: 1 1 400px;
+    max-width: 500px;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #ccc;
+  }
+  
+  input,
+  textarea {
+    background: #2a2a2a;
+    border: none;
+    padding: 12px;
+    border-radius: 4px;
+    margin-bottom: 12px;
+    color: #fff;
+    font-size: 1rem;
+  }
+  
+  input:focus,
+  textarea:focus {
+    outline: 1px solid #007bff;
+  }
+  
+  .error {
+    outline: 1px solid #ff4d4f;
+  }
+  
+  small {
+    color: #ff4d4f;
+    margin-bottom: 8px;
+  }
+  
+  button {
+    background-color: #007bff;
+    color: #fff;
+    font-weight: 600;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  .thankyou {
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-align: center;
+    padding: 40px 0;
+  }
+  

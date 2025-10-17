@@ -1,0 +1,16 @@
+html, body, #root {
+    min-height: calc(100vh - 100px);
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #1f2424; /* <-- your dark theme background */
+    color: #fff;
+  }
+
+  /* body {
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: #1f2424; 
+    color: #fff; 
+  } */
+  
