@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { FaInstagram, FaYoutube, FaTwitter, FaLinkedin } from "react-icons/fa";
+import { FaInstagram, FaYoutube, FaTwitter, FaLinkedin, FaDiscord } from "react-icons/fa";
 import "./Footer.css";
 
 const Footer: React.FC = () => {
@@ -15,7 +15,7 @@ const Footer: React.FC = () => {
       <div className="footer__content">
         <div className="footer__socials">
           <a
-            href="https://instagram.com/"
+            href="https://www.instagram.com/nextribe_studios/"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Instagram"
@@ -23,28 +23,36 @@ const Footer: React.FC = () => {
             <FaInstagram />
           </a>
           <a
-            href="https://youtube.com/"
+            href="https://www.youtube.com/@NextribeStudios"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="YouTube"
           >
             <FaYoutube />
           </a>
-          <a
+          {/* <a
             href="https://twitter.com/"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Twitter"
           >
             <FaTwitter />
-          </a>
+          </a> */}
           <a
-            href="https://linkedin.com/"
+            href="https://www.linkedin.com/company/nextribe-studios/?viewAsMember=true"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
           >
             <FaLinkedin />
+          </a>
+          <a
+            href="https://discord.gg/yWfrc2Fb9d"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Discord"
+          >
+            <FaDiscord />
           </a>
         </div>
 
