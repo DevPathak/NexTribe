@@ -1,6 +1,14 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { FaInstagram, FaYoutube, FaLinkedin, FaDiscord } from "react-icons/fa";
+// import { FaInstagram, FaYoutube, FaLinkedin, FaDiscord } from "react-icons/fa";
+import {
+  SiYoutube,
+  SiInstagram,
+  SiDiscord,
+  SiLinkedin,
+  SiGoogleplay
+} from "react-icons/si";
+
 import "./Footer.css";
 
 const Footer: React.FC = () => {
@@ -20,7 +28,7 @@ const Footer: React.FC = () => {
             rel="noopener noreferrer"
             aria-label="Instagram"
           >
-            <FaInstagram />
+            <SiInstagram />
           </a>
           <a
             href="https://www.youtube.com/@NextribeStudios"
@@ -28,7 +36,7 @@ const Footer: React.FC = () => {
             rel="noopener noreferrer"
             aria-label="YouTube"
           >
-            <FaYoutube />
+            <SiYoutube />
           </a>
           {/* <a
             href="https://twitter.com/"
@@ -44,7 +52,7 @@ const Footer: React.FC = () => {
             rel="noopener noreferrer"
             aria-label="LinkedIn"
           >
-            <FaLinkedin />
+            <SiLinkedin />
           </a>
           <a
             href="https://discord.gg/yWfrc2Fb9d"
@@ -52,7 +60,15 @@ const Footer: React.FC = () => {
             rel="noopener noreferrer"
             aria-label="Discord"
           >
-            <FaDiscord />
+            <SiDiscord />
+          </a>
+          <a
+            href="https://play.google.com/store/apps/dev?id=5254004012582833225&hl=en_IN"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GooglePlay"
+          >
+            <SiGoogleplay />
           </a>
         </div>
 
