@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { FaInstagram, FaYoutube, FaTwitter, FaLinkedin, FaDiscord } from "react-icons/fa";
+import { FaInstagram, FaYoutube, FaLinkedin, FaDiscord } from "react-icons/fa";
 import "./Footer.css";
 
 const Footer: React.FC = () => {
