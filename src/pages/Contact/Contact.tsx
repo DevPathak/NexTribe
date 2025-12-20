@@ -79,7 +79,7 @@ const Contact: React.FC = () => {
         <h3>NexTribe Studios</h3>
         <p>Coming Soon</p>
 
-        <p className="contact-email">info@nextribestudios.com</p>
+        <p className="contact-email">info@nextribestudios.in</p>
 
         <p>Have a question or a story to share? Send us a message and we'll get back to you soon.</p>
 
