@@ -1,4 +1,3 @@
-
 {
   "headers": [
     {
@@ -15,8 +14,25 @@
     }
   ],
   "rewrites": [
-    { "source": "/app-ads.txt", "destination": "/app-ads.txt" },
-    { "source": "/api/(.*)", "destination": "/api/$1" },
-    { "source": "/(.*)", "destination": "/index.html" }
+    {
+      "source": "/game",
+      "destination": "/game/index.html"
+    },
+    {
+      "source": "/game/(.*)",
+      "destination": "/game/$1"
+    },
+    {
+      "source": "/app-ads.txt",
+      "destination": "/app-ads.txt"
+    },
+    {
+      "source": "/api/(.*)",
+      "destination": "/api/$1"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
   ]
 }
