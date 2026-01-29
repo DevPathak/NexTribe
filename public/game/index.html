@@ -115,6 +115,9 @@
       var script = document.createElement("script");
       script.src = loaderUrl;
       script.onload = () => {
+        function OnAppReady() {
+          console.log("Unity ready");
+        }
         createUnityInstance(canvas, config, (progress) => {
           document.querySelector("#unity-progress-bar-full").style.width = 100 * progress + "%";
               }).then((unityInstance) => {
