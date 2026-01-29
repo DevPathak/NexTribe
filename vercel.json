@@ -1,18 +1,25 @@
 {
   "headers": [
-    {
-      "source": "/game/(.*)\\.br",
-      "headers": [
-        { "key": "Content-Encoding", "value": "br" }
-      ]
-    },
-    {
-      "source": "/game/(.*)\\.wasm",
-      "headers": [
-        { "key": "Content-Type", "value": "application/wasm" }
-      ]
-    }
-  ],
+  {
+    "source": "/game/(.*)\\.wasm\\.br",
+    "headers": [
+      { "key": "Content-Type", "value": "application/wasm" },
+      { "key": "Content-Encoding", "value": "br" }
+    ]
+  },
+  {
+    "source": "/game/(.*)\\.js\\.br",
+    "headers": [
+      { "key": "Content-Encoding", "value": "br" }
+    ]
+  },
+  {
+    "source": "/game/(.*)\\.data\\.br",
+    "headers": [
+      { "key": "Content-Encoding", "value": "br" }
+    ]
+  }
+],
   "rewrites": [
     {
       "source": "/game",
