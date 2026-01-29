@@ -1,5 +1,19 @@
 
 {
+  "headers": [
+    {
+      "source": "/game/(.*)\\.br",
+      "headers": [
+        { "key": "Content-Encoding", "value": "br" }
+      ]
+    },
+    {
+      "source": "/game/(.*)\\.wasm",
+      "headers": [
+        { "key": "Content-Type", "value": "application/wasm" }
+      ]
+    }
+  ],
   "rewrites": [
     { "source": "/app-ads.txt", "destination": "/app-ads.txt" },
     { "source": "/api/(.*)", "destination": "/api/$1" },
