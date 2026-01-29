@@ -22,13 +22,15 @@
       "source": "/game/(.*)",
       "destination": "/game/$1"
     },
+
+    {
+      "source": "/(.*)\\.(js|css|wasm|data|br|png|jpg|ico)",
+      "destination": "/$1"
+    },
+
     {
       "source": "/app-ads.txt",
       "destination": "/app-ads.txt"
-    },
-    {
-      "source": "/api/(.*)",
-      "destination": "/api/$1"
     },
     {
       "source": "/(.*)",
