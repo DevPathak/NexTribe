@@ -56,13 +56,55 @@
       } */
 
     @media screen and (orientation: portrait) {
-      /* Removed CSS rotation hack - falling back to native lock */
+      /* Placeholder for portrait specific */
+    }
+
+    #play-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(31, 36, 36, 0.95);
+      z-index: 99999;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    #play-button {
+      background: #4caf50;
+      color: white;
+      border: none;
+      padding: 15px 40px;
+      font-size: 1.5rem;
+      font-weight: bold;
+      border-radius: 8px;
+      margin-top: 20px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    #play-button:hover {
+      background: #45a049;
     }
   </style>
 
 </head>
 
 <body>
+  <div id="play-overlay">
+    <h2>Ready to Play?</h2>
+    <div id="play-button">TAP TO START</div>
+    <p style="margin-top: 15px; font-size: 0.9rem; opacity: 0.8;">Game requires fullscreen mode to play.</p>
+  </div>
   <div id="unity-container" class="unity-desktop">
     <canvas id="unity-canvas" width=1034 height=582 tabindex="-1"></canvas>
     <div id="unity-loading-bar">
@@ -144,7 +186,7 @@
     // JS_FileSystem_Sync() behavior, but in future Unity version, this will be
     // expected to change.
 
-    var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent) || window.innerWidth <= 1024 || window.innerHeight <= 768;
+    var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
     if (isMobile) {
       // Mobile device style: fill the whole browser client area with the game canvas:
@@ -161,18 +203,27 @@
       function lockFullscreen() {
         var elem = document.documentElement;
         var req = elem.requestFullscreen || elem.webkitRequestFullscreen || elem.mozRequestFullScreen || elem.msRequestFullscreen;
+        
+        var enterGame = () => {
+          document.getElementById('play-overlay').style.display = 'none';
+          if (window.screen && window.screen.orientation && window.screen.orientation.lock) {
+             window.screen.orientation.lock('landscape').catch((e) => console.log('Orientation lock error:', e));
+          }
+        };
+
         if (req) {
-          req.call(elem).then(() => {
-            if (window.screen && window.screen.orientation && window.screen.orientation.lock) {
-               window.screen.orientation.lock('landscape').catch((e) => console.log(e));
-            }
-          }).catch((e) => console.log(e));
+          req.call(elem).then(enterGame).catch((e) => {
+            console.log('Fullscreen error:', e);
+            enterGame(); // still enter game even if fullscreen fails
+          });
+        } else {
+          enterGame();
         }
       }
       
-      // Hook into the first touch or click to trigger the lock
-      document.body.addEventListener('touchstart', lockFullscreen, { once: true });
-      document.body.addEventListener('click', lockFullscreen, { once: true });
+      // Show play overlay to capture the gesture securely
+      document.getElementById('play-overlay').style.display = 'flex';
+      document.getElementById('play-overlay').addEventListener('click', lockFullscreen);
 
     } else {
       // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
