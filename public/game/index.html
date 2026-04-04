@@ -55,53 +55,25 @@
         cursor: pointer;
       } */
 
-    #rotate-overlay {
-      display: none;
-    }
+    @media screen and (orientation: portrait) {
+      body {
+        align-items: flex-start;
+        justify-content: flex-start;
+      }
 
-    @media screen and (orientation: portrait) and (max-width: 900px) {
       #unity-container {
-        display: none !important;
+        position: fixed !important;
+        top: 50% !important;
+        left: 50% !important;
+        width: 100vh !important;
+        height: 100vw !important;
+        transform: translate(-50%, -50%) rotate(90deg) !important;
+        transform-origin: center center !important;
       }
 
-      #rotate-overlay {
-        display: flex;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        background-color: #000;
-        color: #fff;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        z-index: 99999;
-        font-size: 1.5rem;
-        font-family: sans-serif;
-        text-align: center;
-        padding: 20px;
-        box-sizing: border-box;
-      }
-
-      .rotate-icon {
-        font-size: 4rem;
-        margin-bottom: 20px;
-        animation: rotateAnim 2s infinite ease-in-out;
-      }
-    }
-
-    @keyframes rotateAnim {
-      0% {
-        transform: rotate(0deg);
-      }
-
-      50% {
-        transform: rotate(90deg);
-      }
-
-      100% {
-        transform: rotate(0deg);
+      #unity-canvas {
+        width: 100% !important;
+        height: 100% !important;
       }
     }
   </style>
@@ -109,10 +81,6 @@
 </head>
 
 <body>
-  <div id="rotate-overlay">
-    <div class="rotate-icon">↻</div>
-    <div>Please rotate your device to landscape to play the game.</div>
-  </div>
   <div id="unity-container" class="unity-desktop">
     <canvas id="unity-canvas" width=1034 height=582 tabindex="-1"></canvas>
     <div id="unity-loading-bar">
