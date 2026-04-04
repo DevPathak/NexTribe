@@ -56,25 +56,7 @@
       } */
 
     @media screen and (orientation: portrait) {
-      body {
-        align-items: flex-start;
-        justify-content: flex-start;
-      }
-
-      #unity-container {
-        position: fixed !important;
-        top: 50% !important;
-        left: 50% !important;
-        width: 100vh !important;
-        height: 100vw !important;
-        transform: translate(-50%, -50%) rotate(90deg) !important;
-        transform-origin: center center !important;
-      }
-
-      #unity-canvas {
-        width: 100% !important;
-        height: 100% !important;
-      }
+      /* Removed CSS rotation hack - falling back to native lock */
     }
   </style>
 
@@ -175,11 +157,23 @@
       // performance, uncomment the following line:
       config.devicePixelRatio = 2; // Increased slightly for clarity, but lower than native
 
-      if (window.screen && window.screen.orientation && window.screen.orientation.lock) {
-        window.screen.orientation.lock('landscape').catch(function (error) {
-          console.log('Orientation lock failed', error);
-        });
+      // Native fullscreen and landscape locking requires a user gesture in browsers.
+      function lockFullscreen() {
+        var elem = document.documentElement;
+        var req = elem.requestFullscreen || elem.webkitRequestFullscreen || elem.mozRequestFullScreen || elem.msRequestFullscreen;
+        if (req) {
+          req.call(elem).then(() => {
+            if (window.screen && window.screen.orientation && window.screen.orientation.lock) {
+               window.screen.orientation.lock('landscape').catch((e) => console.log(e));
+            }
+          }).catch((e) => console.log(e));
+        }
       }
+      
+      // Hook into the first touch or click to trigger the lock
+      document.body.addEventListener('touchstart', lockFullscreen, { once: true });
+      document.body.addEventListener('click', lockFullscreen, { once: true });
+
     } else {
       // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
       canvas.style.width = "1034px";
