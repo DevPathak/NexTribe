@@ -4,8 +4,8 @@ import { Apple, ArrowLeft, Gamepad2, Play } from "lucide-react";
 import { AmbientBackground } from "@/components/site/AmbientBackground";
 import { Footer } from "@/components/site/Footer";
 import { CrestLogo } from "@/components/brand/CrestLogo";
-import shot1 from "@/assets/wordcross-shot-1.png.asset.json";
-import astroloop from "@/assets/astroloop-promo.png.asset.json";
+const shot1Url = "/Wordcross/81c5ae4f-dbeb-4592-8df1-75673f6b13d7.png";
+const astroloopUrl = "/Wordcross/81c5ae4f-dbeb-4592-8df1-75673f6b13d7.png";
 
 export const Route = createFileRoute("/games/word-cross")({
   head: () => ({
@@ -129,7 +129,7 @@ function WordCrossPage() {
           >
             <div className="overflow-hidden rounded-xl">
               <img
-                src={shot1.url}
+                src={shot1Url}
                 alt="Word Cross key art — jungle temple crossword grid with letter wheel"
                 width={1024}
                 height={576}
@@ -197,7 +197,7 @@ function WordCrossPage() {
         <figure className="group mt-4 overflow-hidden rounded-2xl border border-border/80 bg-card/50 p-2 backdrop-blur-sm transition-colors hover:border-teal/50">
           <div className="overflow-hidden rounded-xl">
             <img
-              src={astroloop.url}
+              src={astroloopUrl}
               alt="Astroloop: Beat in Motion key art — neon rhythm rings in deep space"
               loading="lazy"
               width={1024}
