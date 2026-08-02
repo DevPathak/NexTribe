@@ -1,0 +1,249 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * NexTribe Studios design system.
+ * Dark, near-black teal canvas with teal / orange / amber brand accents.
+ * All colors are oklch tokens — never hardcode colors in components.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+
+  --color-teal: var(--brand-teal);
+  --color-teal-deep: var(--brand-teal-deep);
+  --color-cyan: var(--brand-cyan);
+  --color-amber: var(--brand-amber);
+  --color-orange: var(--brand-orange);
+  --color-grid: var(--grid-line);
+
+  --font-display: "Saira Condensed", "Arial Narrow", sans-serif;
+  --font-mono-ui: "Rajdhani", sans-serif;
+  --font-sans: "Barlow", system-ui, sans-serif;
+}
+
+:root {
+  --radius: 0.625rem;
+
+  --background: oklch(0.165 0.017 195);
+  --foreground: oklch(0.95 0.008 200);
+  --card: oklch(0.21 0.02 195);
+  --card-foreground: oklch(0.95 0.008 200);
+  --popover: oklch(0.21 0.02 195);
+  --popover-foreground: oklch(0.95 0.008 200);
+  --primary: oklch(0.78 0.115 190);
+  --primary-foreground: oklch(0.16 0.02 195);
+  --secondary: oklch(0.26 0.022 195);
+  --secondary-foreground: oklch(0.95 0.008 200);
+  --muted: oklch(0.26 0.022 195);
+  --muted-foreground: oklch(0.68 0.017 200);
+  --accent: oklch(0.68 0.155 45);
+  --accent-foreground: oklch(0.16 0.02 195);
+  --destructive: oklch(0.6 0.21 27);
+  --destructive-foreground: oklch(0.97 0.005 200);
+  --border: oklch(0.32 0.025 195);
+  --input: oklch(0.32 0.025 195);
+  --ring: oklch(0.78 0.115 190);
+
+  --brand-teal: oklch(0.76 0.11 190);
+  --brand-teal-deep: oklch(0.52 0.07 205);
+  --brand-cyan: oklch(0.83 0.13 205);
+  --brand-amber: oklch(0.79 0.16 70);
+  --brand-orange: oklch(0.69 0.16 45);
+  --grid-line: oklch(0.3 0.025 195 / 45%);
+}
+
+.dark {
+  --background: oklch(0.165 0.017 195);
+  --foreground: oklch(0.95 0.008 200);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5.5rem;
+  }
+
+
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+  }
+}
+
+/* Faint technical grid used behind the whole page. */
+@utility bg-tech-grid {
+  background-image:
+    linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+  background-size: 96px 96px;
+}
+
+@utility text-glow-teal {
+  text-shadow: 0 0 28px color-mix(in oklab, var(--brand-cyan) 45%, transparent);
+}
+
+@utility text-glow-amber {
+  text-shadow: 0 0 28px color-mix(in oklab, var(--brand-amber) 35%, transparent);
+}
+
+@utility drop-glow-orange {
+  filter: drop-shadow(0 0 22px color-mix(in oklab, var(--brand-orange) 55%, transparent));
+}
+
+@utility drop-glow-teal {
+  filter: drop-shadow(0 0 18px color-mix(in oklab, var(--brand-teal) 45%, transparent));
+}
+
+@keyframes drift-y {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(var(--r, 0deg));
+  }
+  50% {
+    transform: translate3d(var(--dx, 0px), var(--dy, -28px), 0) rotate(calc(var(--r, 0deg) + 18deg));
+  }
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes globe-sweep {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+@keyframes map-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes mote-drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+    opacity: 0.2;
+  }
+  50% {
+    transform: translate3d(var(--dx, 0px), var(--dy, -60px), 0);
+    opacity: 1;
+  }
+}
+
+@keyframes orb-pulse {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(0.9);
+    opacity: 0.35;
+  }
+  50% {
+    transform: translate3d(0, -22px, 0) scale(1.12);
+    opacity: 0.85;
+  }
+}
+
+@keyframes streak-sweep {
+  0% {
+    transform: translateX(-30vw);
+    opacity: 0;
+  }
+  12% {
+    opacity: 1;
+  }
+  88% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(115vw);
+    opacity: 0;
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+
+@keyframes scroll-cue {
+  0% {
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+  50% {
+    transform: scaleY(1);
+    transform-origin: top;
+  }
+  51% {
+    transform: scaleY(1);
+    transform-origin: bottom;
+  }
+  100% {
+    transform: scaleY(0);
+    transform-origin: bottom;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
