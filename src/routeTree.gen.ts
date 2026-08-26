@@ -11,7 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as CookiesRouteImport } from './routes/cookies'
-import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as PolicyRouteImport } from './routes/policy'
 import { Route as RefundsRouteImport } from './routes/refunds'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as GamesPlankedRouteImport } from './routes/games.planked'
@@ -27,9 +27,9 @@ const CookiesRoute = CookiesRouteImport.update({
   path: '/cookies',
   getParentRoute: () => rootRouteImport,
 } as any)
-const PrivacyRoute = PrivacyRouteImport.update({
-  id: '/privacy',
-  path: '/privacy',
+const PolicyRoute = PolicyRouteImport.update({
+  id: '/policy',
+  path: '/policy',
   getParentRoute: () => rootRouteImport,
 } as any)
 const RefundsRoute = RefundsRouteImport.update({
@@ -56,7 +56,7 @@ const GamesWordCrossRoute = GamesWordCrossRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/cookies': typeof CookiesRoute
-  '/privacy': typeof PrivacyRoute
+  '/policy': typeof PolicyRoute
   '/refunds': typeof RefundsRoute
   '/terms': typeof TermsRoute
   '/games/planked': typeof GamesPlankedRoute
@@ -65,7 +65,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/cookies': typeof CookiesRoute
-  '/privacy': typeof PrivacyRoute
+  '/policy': typeof PolicyRoute
   '/refunds': typeof RefundsRoute
   '/terms': typeof TermsRoute
   '/games/planked': typeof GamesPlankedRoute
@@ -75,7 +75,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/cookies': typeof CookiesRoute
-  '/privacy': typeof PrivacyRoute
+  '/policy': typeof PolicyRoute
   '/refunds': typeof RefundsRoute
   '/terms': typeof TermsRoute
   '/games/planked': typeof GamesPlankedRoute
@@ -86,7 +86,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/cookies'
-    | '/privacy'
+    | '/policy'
     | '/refunds'
     | '/terms'
     | '/games/planked'
@@ -95,7 +95,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/cookies'
-    | '/privacy'
+    | '/policy'
     | '/refunds'
     | '/terms'
     | '/games/planked'
@@ -104,7 +104,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/cookies'
-    | '/privacy'
+    | '/policy'
     | '/refunds'
     | '/terms'
     | '/games/planked'
@@ -114,7 +114,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   CookiesRoute: typeof CookiesRoute
-  PrivacyRoute: typeof PrivacyRoute
+  PolicyRoute: typeof PolicyRoute
   RefundsRoute: typeof RefundsRoute
   TermsRoute: typeof TermsRoute
   GamesPlankedRoute: typeof GamesPlankedRoute
@@ -137,11 +137,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CookiesRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/privacy': {
-      id: '/privacy'
-      path: '/privacy'
-      fullPath: '/privacy'
-      preLoaderRoute: typeof PrivacyRouteImport
+    '/policy': {
+      id: '/policy'
+      path: '/policy'
+      fullPath: '/policy'
+      preLoaderRoute: typeof PolicyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/refunds': {
@@ -178,7 +178,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   CookiesRoute: CookiesRoute,
-  PrivacyRoute: PrivacyRoute,
+  PolicyRoute: PolicyRoute,
   RefundsRoute: RefundsRoute,
   TermsRoute: TermsRoute,
   GamesPlankedRoute: GamesPlankedRoute,

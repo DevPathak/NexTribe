@@ -5,7 +5,7 @@ import { CrestLogo } from "@/components/brand/CrestLogo";
 const LINKS = [
   { label: "About", href: "#about" },
   { label: "Work", href: "#work" },
-  { label: "Privacy", href: "/privacy" },
+  { label: "Privacy", href: "/policy" },
 ];
 
 const wiggle = {
