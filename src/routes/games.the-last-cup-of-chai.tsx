@@ -8,9 +8,9 @@ import { HeaderCrest } from "@/components/brand/HeaderCrest";
 import clip1 from "@/assets/chai-clip-1.mp4.asset.json";
 import clip2 from "@/assets/chai-clip-2.mp4.asset.json";
 import clip3 from "@/assets/chai-clip-3.mp4.asset.json";
-import poster from "@/assets/chai-poster.png.asset.json";
-import banner from "@/assets/chai-banner.png.asset.json";
-import stall from "@/assets/chai-stall.png.asset.json";
+import posterUrl from "@/assets/chai-poster.png";
+import bannerUrl from "@/assets/chai-banner.png";
+import stallUrl from "@/assets/chai-stall.png";
 
 export const Route = createFileRoute("/games/the-last-cup-of-chai")({
   head: () => ({
@@ -152,7 +152,7 @@ function ChaiPage() {
             {...fade}
           >
             <img
-              src={poster.url}
+              src={posterUrl}
               alt="The Last Cup of Chai key art poster"
               width={1024}
               height={1536}
@@ -173,7 +173,7 @@ function ChaiPage() {
         <div className="mt-4 overflow-hidden rounded-2xl border border-border/80 bg-card/50 p-2 shadow-[0_0_70px_color-mix(in_oklab,var(--brand-teal)_18%,transparent)] backdrop-blur-sm">
           <video
             src={clip1.url}
-            poster={stall.url}
+            poster={stallUrl}
             autoPlay
             muted
             loop
@@ -273,7 +273,7 @@ function ChaiPage() {
           <figure className="group overflow-hidden rounded-2xl border border-border/80 bg-card/50 p-2 backdrop-blur-sm transition-colors hover:border-teal/50">
             <div className="overflow-hidden rounded-xl">
               <img
-                src={banner.url}
+                src={bannerUrl}
                 alt="The Last Cup of Chai banner art — the table of players at a night tapri"
                 loading="lazy"
                 width={1920}
@@ -288,7 +288,7 @@ function ChaiPage() {
           <figure className="group overflow-hidden rounded-2xl border border-border/80 bg-card/50 p-2 backdrop-blur-sm transition-colors hover:border-teal/50">
             <div className="overflow-hidden rounded-xl">
               <img
-                src={stall.url}
+                src={stallUrl}
                 alt="A rain-soaked chai stall at night, the setting of the game"
                 loading="lazy"
                 width={1536}

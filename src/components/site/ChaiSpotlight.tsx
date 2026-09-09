@@ -1,7 +1,7 @@
 import { motion } from "motion/react";
 import { Link } from "@tanstack/react-router";
 import { ArrowUpRight } from "lucide-react";
-import poster from "@/assets/chai-poster.png.asset.json";
+import posterUrl from "@/assets/chai-poster.png";
 
 const TAGS = ["Social Bluffing", "Party Game", "2–8 Players"];
 
@@ -78,7 +78,7 @@ export function ChaiSpotlight() {
               className="group block overflow-hidden rounded-2xl border border-border/80 bg-background/40 p-2 shadow-[0_0_70px_color-mix(in_oklab,var(--brand-orange,#e07b39)_16%,transparent)]"
             >
               <img
-                src={poster.url}
+                src={posterUrl}
                 alt="The Last Cup of Chai key art — players bluffing over cups of chai at a night-time tapri"
                 loading="lazy"
                 width={1024}
