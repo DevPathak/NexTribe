@@ -9,7 +9,7 @@ const STUDIO = [
 ];
 
 const LEGAL = [
-  { label: "Privacy Policy", to: "/policy" },
+  { label: "Privacy Policy", to: "/privacy" },
   { label: "Terms of Service", to: "/terms" },
   { label: "Cookie Policy", to: "/cookies" },
   { label: "Refund Policy", to: "/refunds" },

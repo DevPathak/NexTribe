@@ -2,7 +2,7 @@ import type { ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
 import { AmbientBackground } from "@/components/site/AmbientBackground";
 import { Footer } from "@/components/site/Footer";
-import { CrestLogo } from "@/components/brand/CrestLogo";
+import { HeaderCrest } from "@/components/brand/HeaderCrest";
 
 export function LegalPage({
   eyebrow = "Legal",
@@ -23,7 +23,7 @@ export function LegalPage({
 
       <header className="relative z-10 mx-auto flex w-full max-w-4xl items-center justify-between px-5 py-6 sm:px-8">
         <Link to="/" className="flex items-center gap-3">
-          <CrestLogo className="h-8 w-8 shrink-0 drop-glow-teal" />
+          <HeaderCrest className="h-8 w-8 shrink-0" />
           <span className="flex flex-col leading-none">
             <span className="font-display text-lg font-bold tracking-[0.16em] text-cyan">
               NEXTRIBE

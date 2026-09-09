@@ -9,27 +9,18 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as IndexRouteImport } from './routes/index'
-import { Route as CookiesRouteImport } from './routes/cookies'
-import { Route as PolicyRouteImport } from './routes/policy'
-import { Route as RefundsRouteImport } from './routes/refunds'
 import { Route as TermsRouteImport } from './routes/terms'
-import { Route as GamesPlankedRouteImport } from './routes/games.planked'
+import { Route as RefundsRouteImport } from './routes/refunds'
+import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as CookiesRouteImport } from './routes/cookies'
+import { Route as IndexRouteImport } from './routes/index'
 import { Route as GamesWordCrossRouteImport } from './routes/games.word-cross'
+import { Route as GamesTheLastCupOfChaiRouteImport } from './routes/games.the-last-cup-of-chai'
+import { Route as GamesPlankedRouteImport } from './routes/games.planked'
 
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CookiesRoute = CookiesRouteImport.update({
-  id: '/cookies',
-  path: '/cookies',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PolicyRoute = PolicyRouteImport.update({
-  id: '/policy',
-  path: '/policy',
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
   getParentRoute: () => rootRouteImport,
 } as any)
 const RefundsRoute = RefundsRouteImport.update({
@@ -37,14 +28,19 @@ const RefundsRoute = RefundsRouteImport.update({
   path: '/refunds',
   getParentRoute: () => rootRouteImport,
 } as any)
-const TermsRoute = TermsRouteImport.update({
-  id: '/terms',
-  path: '/terms',
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
   getParentRoute: () => rootRouteImport,
 } as any)
-const GamesPlankedRoute = GamesPlankedRouteImport.update({
-  id: '/games/planked',
-  path: '/games/planked',
+const CookiesRoute = CookiesRouteImport.update({
+  id: '/cookies',
+  path: '/cookies',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const GamesWordCrossRoute = GamesWordCrossRouteImport.update({
@@ -52,33 +48,46 @@ const GamesWordCrossRoute = GamesWordCrossRouteImport.update({
   path: '/games/word-cross',
   getParentRoute: () => rootRouteImport,
 } as any)
+const GamesTheLastCupOfChaiRoute = GamesTheLastCupOfChaiRouteImport.update({
+  id: '/games/the-last-cup-of-chai',
+  path: '/games/the-last-cup-of-chai',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GamesPlankedRoute = GamesPlankedRouteImport.update({
+  id: '/games/planked',
+  path: '/games/planked',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/cookies': typeof CookiesRoute
-  '/policy': typeof PolicyRoute
+  '/privacy': typeof PrivacyRoute
   '/refunds': typeof RefundsRoute
   '/terms': typeof TermsRoute
   '/games/planked': typeof GamesPlankedRoute
+  '/games/the-last-cup-of-chai': typeof GamesTheLastCupOfChaiRoute
   '/games/word-cross': typeof GamesWordCrossRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/cookies': typeof CookiesRoute
-  '/policy': typeof PolicyRoute
+  '/privacy': typeof PrivacyRoute
   '/refunds': typeof RefundsRoute
   '/terms': typeof TermsRoute
   '/games/planked': typeof GamesPlankedRoute
+  '/games/the-last-cup-of-chai': typeof GamesTheLastCupOfChaiRoute
   '/games/word-cross': typeof GamesWordCrossRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/cookies': typeof CookiesRoute
-  '/policy': typeof PolicyRoute
+  '/privacy': typeof PrivacyRoute
   '/refunds': typeof RefundsRoute
   '/terms': typeof TermsRoute
   '/games/planked': typeof GamesPlankedRoute
+  '/games/the-last-cup-of-chai': typeof GamesTheLastCupOfChaiRoute
   '/games/word-cross': typeof GamesWordCrossRoute
 }
 export interface FileRouteTypes {
@@ -86,62 +95,52 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/cookies'
-    | '/policy'
+    | '/privacy'
     | '/refunds'
     | '/terms'
     | '/games/planked'
+    | '/games/the-last-cup-of-chai'
     | '/games/word-cross'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/cookies'
-    | '/policy'
+    | '/privacy'
     | '/refunds'
     | '/terms'
     | '/games/planked'
+    | '/games/the-last-cup-of-chai'
     | '/games/word-cross'
   id:
     | '__root__'
     | '/'
     | '/cookies'
-    | '/policy'
+    | '/privacy'
     | '/refunds'
     | '/terms'
     | '/games/planked'
+    | '/games/the-last-cup-of-chai'
     | '/games/word-cross'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   CookiesRoute: typeof CookiesRoute
-  PolicyRoute: typeof PolicyRoute
+  PrivacyRoute: typeof PrivacyRoute
   RefundsRoute: typeof RefundsRoute
   TermsRoute: typeof TermsRoute
   GamesPlankedRoute: typeof GamesPlankedRoute
+  GamesTheLastCupOfChaiRoute: typeof GamesTheLastCupOfChaiRoute
   GamesWordCrossRoute: typeof GamesWordCrossRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/cookies': {
-      id: '/cookies'
-      path: '/cookies'
-      fullPath: '/cookies'
-      preLoaderRoute: typeof CookiesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/policy': {
-      id: '/policy'
-      path: '/policy'
-      fullPath: '/policy'
-      preLoaderRoute: typeof PolicyRouteImport
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/refunds': {
@@ -151,18 +150,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof RefundsRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/terms': {
-      id: '/terms'
-      path: '/terms'
-      fullPath: '/terms'
-      preLoaderRoute: typeof TermsRouteImport
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/games/planked': {
-      id: '/games/planked'
-      path: '/games/planked'
-      fullPath: '/games/planked'
-      preLoaderRoute: typeof GamesPlankedRouteImport
+    '/cookies': {
+      id: '/cookies'
+      path: '/cookies'
+      fullPath: '/cookies'
+      preLoaderRoute: typeof CookiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/games/word-cross': {
@@ -172,16 +178,31 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof GamesWordCrossRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/games/the-last-cup-of-chai': {
+      id: '/games/the-last-cup-of-chai'
+      path: '/games/the-last-cup-of-chai'
+      fullPath: '/games/the-last-cup-of-chai'
+      preLoaderRoute: typeof GamesTheLastCupOfChaiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/games/planked': {
+      id: '/games/planked'
+      path: '/games/planked'
+      fullPath: '/games/planked'
+      preLoaderRoute: typeof GamesPlankedRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   CookiesRoute: CookiesRoute,
-  PolicyRoute: PolicyRoute,
+  PrivacyRoute: PrivacyRoute,
   RefundsRoute: RefundsRoute,
   TermsRoute: TermsRoute,
   GamesPlankedRoute: GamesPlankedRoute,
+  GamesTheLastCupOfChaiRoute: GamesTheLastCupOfChaiRoute,
   GamesWordCrossRoute: GamesWordCrossRoute,
 }
 export const routeTree = rootRouteImport

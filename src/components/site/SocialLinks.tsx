@@ -32,7 +32,7 @@ export const SOCIALS: Social[] = [
     Icon: PlayStoreIcon,
   },
   { label: "Discord", href: "https://discord.com/invite/yWfrc2Fb9d", Icon: DiscordIcon },
-  { label: "Instagram", href: "https://www.instagram.com/nextribes_studios", Icon: Instagram },
+  { label: "Instagram", href: "https://www.instagram.com/nextribe_studios", Icon: Instagram },
   {
     label: "LinkedIn",
     href: "https://www.linkedin.com/company/nextribe-studios",

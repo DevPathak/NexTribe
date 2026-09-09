@@ -4,6 +4,7 @@ import { AmbientBackground } from "@/components/site/AmbientBackground";
 import { Hero } from "@/components/site/Hero";
 import { Navbar } from "@/components/site/Navbar";
 import { About } from "@/components/site/About";
+import { ChaiSpotlight } from "@/components/site/ChaiSpotlight";
 import { Games } from "@/components/site/Games";
 import { Contact } from "@/components/site/Contact";
 import { Footer } from "@/components/site/Footer";
@@ -49,6 +50,7 @@ function Index() {
       <Navbar delay={delay} />
       <Hero delay={delay} />
       <About />
+      <ChaiSpotlight />
       <Games />
       <Contact />
       <Footer />

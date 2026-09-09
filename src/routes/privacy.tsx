@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { LegalPage, LegalSection } from "@/components/site/LegalPage";
 
-export const Route = createFileRoute("/policy")({
+export const Route = createFileRoute("/privacy")({
   head: () => ({
     meta: [
       { title: "Privacy Policy — NexTribe Studios" },
@@ -15,9 +15,9 @@ export const Route = createFileRoute("/policy")({
         property: "og:description",
         content: "How NexTribe Studios collects, uses and protects your information.",
       },
-      { property: "og:url", content: "/policy" },
+      { property: "og:url", content: "/privacy" },
     ],
-    links: [{ rel: "canonical", href: "/policy" }],
+    links: [{ rel: "canonical", href: "/privacy" }],
   }),
   component: PrivacyRoute,
 });

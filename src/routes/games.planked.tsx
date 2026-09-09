@@ -3,10 +3,10 @@ import { motion } from "motion/react";
 import { Apple, ArrowLeft, Gamepad2, Play } from "lucide-react";
 import { AmbientBackground } from "@/components/site/AmbientBackground";
 import { Footer } from "@/components/site/Footer";
-import { CrestLogo } from "@/components/brand/CrestLogo";
-const trailerUrl = "/planked/i_want_to_make_an_ads_for_this.mp4";
-const shot1Url = "/planked/Image_Sequence_005_0000.jpg";
-const shot2Url = "/planked/Image_Sequence_006_0000.jpg";
+import { HeaderCrest } from "@/components/brand/HeaderCrest";
+import trailer from "@/assets/planked-trailer.mp4.asset.json";
+import shot1 from "@/assets/planked-shot-1.jpg.asset.json";
+import shot2 from "@/assets/planked-shot-2.jpg.asset.json";
 
 export const Route = createFileRoute("/games/planked")({
   head: () => ({
@@ -40,8 +40,8 @@ const FEATURES = [
 ];
 
 const SHOTS = [
-  { src: shot1Url, caption: "Screw-and-plank contraptions" },
-  { src: shot2Url, caption: "Limited moves, three-star runs" },
+  { src: shot1.url, caption: "Screw-and-plank contraptions" },
+  { src: shot2.url, caption: "Limited moves, three-star runs" },
 ];
 
 const fade = {
@@ -60,7 +60,7 @@ function PlankedPage() {
 
       <header className="relative z-10 mx-auto flex w-full max-w-6xl items-center justify-between px-5 py-6 sm:px-8">
         <Link to="/" className="flex items-center gap-3">
-          <CrestLogo className="h-8 w-8 shrink-0 drop-glow-teal" />
+          <HeaderCrest className="h-8 w-8 shrink-0" />
           <span className="flex flex-col leading-none">
             <span className="font-display text-lg font-bold tracking-[0.16em] text-cyan">
               NEXTRIBE
@@ -136,8 +136,8 @@ function PlankedPage() {
         <div className="mt-4 overflow-hidden rounded-2xl border border-border/80 bg-card/50 p-2 shadow-[0_0_60px_color-mix(in_oklab,var(--brand-teal)_18%,transparent)] backdrop-blur-sm">
           <video
             className="aspect-video w-full rounded-xl bg-black"
-            src={trailerUrl}
-            poster={shot1Url}
+            src={trailer.url}
+            poster={shot1.url}
             controls
             muted
             loop

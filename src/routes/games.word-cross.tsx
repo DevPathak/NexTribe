@@ -3,9 +3,9 @@ import { motion } from "motion/react";
 import { Apple, ArrowLeft, Gamepad2, Play } from "lucide-react";
 import { AmbientBackground } from "@/components/site/AmbientBackground";
 import { Footer } from "@/components/site/Footer";
-import { CrestLogo } from "@/components/brand/CrestLogo";
-const shot1Url = "/Wordcross/81c5ae4f-dbeb-4592-8df1-75673f6b13d7.png";
-const astroloopUrl = "/Wordcross/81c5ae4f-dbeb-4592-8df1-75673f6b13d7.png";
+import { HeaderCrest } from "@/components/brand/HeaderCrest";
+import shot1 from "@/assets/wordcross-shot-1.png.asset.json";
+import astroloop from "@/assets/astroloop-promo.png.asset.json";
 
 export const Route = createFileRoute("/games/word-cross")({
   head: () => ({
@@ -54,7 +54,7 @@ function WordCrossPage() {
 
       <header className="relative z-10 mx-auto flex w-full max-w-6xl items-center justify-between px-5 py-6 sm:px-8">
         <Link to="/" className="flex items-center gap-3">
-          <CrestLogo className="h-8 w-8 shrink-0 drop-glow-teal" />
+          <HeaderCrest className="h-8 w-8 shrink-0" />
           <span className="flex flex-col leading-none">
             <span className="font-display text-lg font-bold tracking-[0.16em] text-cyan">
               NEXTRIBE
@@ -129,7 +129,7 @@ function WordCrossPage() {
           >
             <div className="overflow-hidden rounded-xl">
               <img
-                src={shot1Url}
+                src={shot1.url}
                 alt="Word Cross key art — jungle temple crossword grid with letter wheel"
                 width={1024}
                 height={576}
@@ -197,7 +197,7 @@ function WordCrossPage() {
         <figure className="group mt-4 overflow-hidden rounded-2xl border border-border/80 bg-card/50 p-2 backdrop-blur-sm transition-colors hover:border-teal/50">
           <div className="overflow-hidden rounded-xl">
             <img
-              src={astroloopUrl}
+              src={astroloop.url}
               alt="Astroloop: Beat in Motion key art — neon rhythm rings in deep space"
               loading="lazy"
               width={1024}

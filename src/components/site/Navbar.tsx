@@ -1,11 +1,11 @@
 import { motion } from "motion/react";
 import { useEffect, useState } from "react";
-import { CrestLogo } from "@/components/brand/CrestLogo";
+import { HeaderCrest } from "@/components/brand/HeaderCrest";
 
 const LINKS = [
   { label: "About", href: "#about" },
   { label: "Work", href: "#work" },
-  { label: "Privacy", href: "/policy" },
+  { label: "Privacy", href: "/privacy" },
 ];
 
 const wiggle = {
@@ -34,7 +34,7 @@ export function Navbar({ delay = 0 }: { delay?: number }) {
       transition={{ duration: 0.7, delay, ease: "easeOut" }}
     >
       <a href="#top" className="flex min-w-0 items-center gap-3">
-        <CrestLogo className="h-8 w-8 shrink-0 drop-glow-teal sm:h-9 sm:w-9" />
+        <HeaderCrest className="h-8 w-8 shrink-0 sm:h-9 sm:w-9" />
         <span className="flex min-w-0 flex-col leading-none">
           <span className="truncate font-display text-lg font-bold tracking-[0.16em] text-cyan sm:text-xl">
             NEXTRIBE
